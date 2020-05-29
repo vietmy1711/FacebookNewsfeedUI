@@ -59,6 +59,22 @@ class ViewController: UIViewController {
         newsfeedCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         newsfeedCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
     }
+    
+    override func viewWillLayoutSubviews() {
+         super.viewWillLayoutSubviews()
+
+         guard let flowLayout = newsfeedCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+           return
+         }
+
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+           flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 190)
+         } else {
+           flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 270)
+         }
+
+         flowLayout.invalidateLayout()
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
