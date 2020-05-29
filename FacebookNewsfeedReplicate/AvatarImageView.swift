@@ -24,12 +24,12 @@ class AvatarImageView: UIImageView {
     }
     
     func setupAvatar() {
-        //self.makeRounded()
+        super.makeRounded()
         self.layer.borderWidth = 4
         self.layer.borderColor = UIColor(red: 51/255, green: 121/255, blue: 233/255, alpha: 1).cgColor
-        self.layer.masksToBounds = false
-        self.layer.cornerRadius = 16 //self.frame.height / 2
-        self.clipsToBounds = true
+        //self.layer.masksToBounds = false
+        //self.layer.cornerRadius = 18 //self.frame.height / 2
+       // self.clipsToBounds = true
     }
     
     /*
@@ -65,7 +65,10 @@ extension UIImageView {
     
     
     func makeRounded() {
-        
-        
+        //self.layer.borderWidth = 4
+        //self.layer.borderColor = UIColor(red: 51/255, green: 121/255, blue: 233/255, alpha: 1).cgColor
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 20 //self.frame.height / 2
+        self.clipsToBounds = true
     }
 }

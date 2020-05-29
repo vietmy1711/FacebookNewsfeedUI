@@ -47,7 +47,7 @@ class StoryCellCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(vwView)
         vwView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         vwView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        vwView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
+        vwView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         vwView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
         
         vwView.addSubview(imvStory)
@@ -61,8 +61,8 @@ class StoryCellCollectionViewCell: UICollectionViewCell {
         
         imvAvatar.topAnchor.constraint(equalTo: vwView.topAnchor, constant: 8).isActive = true
         imvAvatar.leftAnchor.constraint(equalTo: vwView.leftAnchor, constant: 8).isActive = true
-        imvAvatar.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        imvAvatar.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        imvAvatar.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        imvAvatar.widthAnchor.constraint(equalToConstant: 40).isActive = true
 
     }
 }

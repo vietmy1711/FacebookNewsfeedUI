@@ -22,7 +22,7 @@ class NewStoryCollectionViewCell: UICollectionViewCell {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "plus"), for: .normal)
         btn.backgroundColor = .white
-        btn.layer.cornerRadius = 16
+        btn.layer.cornerRadius = 18
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -71,8 +71,8 @@ class NewStoryCollectionViewCell: UICollectionViewCell {
         
         bntAdd.topAnchor.constraint(equalTo: vwView.topAnchor, constant: 8).isActive = true
         bntAdd.leftAnchor.constraint(equalTo: vwView.leftAnchor, constant: 8).isActive = true
-        bntAdd.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        bntAdd.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        bntAdd.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        bntAdd.widthAnchor.constraint(equalToConstant: 36).isActive = true
 
     }
 }

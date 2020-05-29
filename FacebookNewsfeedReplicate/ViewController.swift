@@ -25,12 +25,12 @@ class ViewController: UIViewController {
     
     let newsfeedCollectionView: UICollectionView = {
         let collectionView = UICollectionViewFlowLayout()
-        //collectionView.itemSize = CGSize(width: 300, height: 300)
+        collectionView.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 270)
         collectionView.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: collectionView)
         cv.backgroundColor = .clear
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(NewsfeedCollectionViewCell.self, forCellWithReuseIdentifier: "NewsfeedCollectionViewCell")
+        cv.register(UINib(nibName: "NewsfeedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsfeedCollectionViewCell")
         return cv
     }()
     
@@ -54,12 +54,11 @@ class ViewController: UIViewController {
         
         view.addSubview(newsfeedCollectionView)
         //verticalCollectionView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        newsfeedCollectionView.topAnchor.constraint(equalTo: storyCollectionView.bottomAnchor, constant: 10).isActive = true
-        newsfeedCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
-        newsfeedCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
-        newsfeedCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
+        newsfeedCollectionView.topAnchor.constraint(equalTo: storyCollectionView.bottomAnchor, constant: 12).isActive = true
+        newsfeedCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        newsfeedCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        newsfeedCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
     }
-    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -82,7 +81,5 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsfeedCollectionViewCell", for: indexPath)
         return cell
-        
     }
-    
 }
