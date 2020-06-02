@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let scrollView = UIScrollView()
+    
     let storyCollectionView: UICollectionView = {
         let collectionView = UICollectionViewFlowLayout()
         collectionView.itemSize = CGSize(width: 120, height: 200)
@@ -25,11 +27,12 @@ class ViewController: UIViewController {
     
     let newsfeedCollectionView: UICollectionView = {
         let collectionView = UICollectionViewFlowLayout()
-        collectionView.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 270)
         collectionView.scrollDirection = .vertical
+        //collectionView.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let cv = UICollectionView(frame: .zero, collectionViewLayout: collectionView)
         cv.backgroundColor = .clear
         cv.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 270)
         cv.register(UINib(nibName: "NewsfeedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsfeedCollectionViewCell")
         return cv
     }()
@@ -67,8 +70,8 @@ class ViewController: UIViewController {
            return
          }
 
-        if UIApplication.shared.statusBarOrientation.isLandscape {
-           flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 190)
+        if UIWindow.isLandscape {
+           flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 180)
          } else {
            flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 270)
          }
@@ -77,7 +80,8 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == storyCollectionView {
             return 30
@@ -86,8 +90,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
         if collectionView == storyCollectionView {
+            var cell = UICollectionViewCell()
             if indexPath.row == 0 {
                 cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewStoryCollectionViewCell", for: indexPath)
                 return cell
@@ -95,7 +99,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryCellCollectionViewCell", for: indexPath)
             return cell
         }
-        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsfeedCollectionViewCell", for: indexPath)
+        var cell = NewsfeedCollectionViewCell()
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsfeedCollectionViewCell", for: indexPath) as! NewsfeedCollectionViewCell
+
         return cell
+    }
+}
+
+extension UIWindow {
+    static var isLandscape: Bool {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows
+                .first?
+                .windowScene?
+                .interfaceOrientation
+                .isLandscape ?? false
+        } else {
+            return UIApplication.shared.statusBarOrientation.isLandscape
+        }
     }
 }

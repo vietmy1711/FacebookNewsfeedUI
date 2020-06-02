@@ -68,23 +68,23 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My name is A and 16 others" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbd-Tx-Eeo">
-                                <rect key="frame" x="56" y="225" width="200" height="19.5"/>
+                                <rect key="frame" x="56" y="225" width="200" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ich-jW-aaw">
-                                <rect key="frame" x="14" y="248.5" width="348" height="1"/>
+                                <rect key="frame" x="14" y="247" width="348" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="XJT-c3-EMS"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Sx3-ro-oLe">
-                                <rect key="frame" x="14" y="257.5" width="348" height="21"/>
+                                <rect key="frame" x="14" y="256" width="348" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dh-0d-cxM">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="28"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="  Like" image="paperplane" catalog="system">
@@ -92,7 +92,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ln-dk-hty">
-                                        <rect key="frame" x="95" y="0.0" width="153.5" height="21"/>
+                                        <rect key="frame" x="95" y="0.0" width="153.5" height="28"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="  Comment" image="message" catalog="system">
@@ -100,7 +100,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VF-qL-Ue7">
-                                        <rect key="frame" x="256.5" y="0.0" width="91.5" height="21"/>
+                                        <rect key="frame" x="256.5" y="0.0" width="91.5" height="28"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="  Share" image="arrowshape.turn.up.right" catalog="system">
@@ -112,6 +112,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sx3-ro-oLe" secondAttribute="bottom" constant="8" id="0Ne-mh-z4r"/>
                             <constraint firstAttribute="trailing" secondItem="5Rd-cZ-ueR" secondAttribute="trailing" constant="14" id="95Z-9Z-Qdm"/>
                             <constraint firstAttribute="trailing" secondItem="Sx3-ro-oLe" secondAttribute="trailing" constant="14" id="9Hf-5a-3Sh"/>
                             <constraint firstItem="Dbd-Tx-Eeo" firstAttribute="leading" secondItem="PhR-ut-pUA" secondAttribute="trailing" constant="4" id="Bjf-mp-gRt"/>
@@ -119,6 +120,7 @@
                             <constraint firstItem="5Rd-cZ-ueR" firstAttribute="top" secondItem="hOu-aR-oDz" secondAttribute="bottom" constant="8" id="Dah-BB-rUL"/>
                             <constraint firstItem="hOu-aR-oDz" firstAttribute="top" secondItem="WyY-MH-zYq" secondAttribute="top" constant="12" id="ENn-Ut-rVB"/>
                             <constraint firstItem="UOA-5S-Tle" firstAttribute="top" secondItem="WyY-MH-zYq" secondAttribute="top" constant="14" id="IJC-s5-TeL"/>
+                            <constraint firstItem="ich-jW-aaw" firstAttribute="top" secondItem="PhR-ut-pUA" secondAttribute="bottom" constant="2" id="KmR-sk-eJ7"/>
                             <constraint firstAttribute="trailing" secondItem="ich-jW-aaw" secondAttribute="trailing" constant="14" id="SA2-wX-gMS"/>
                             <constraint firstItem="Sx3-ro-oLe" firstAttribute="top" secondItem="ich-jW-aaw" secondAttribute="bottom" constant="8" id="THm-ME-fjZ"/>
                             <constraint firstItem="UOA-5S-Tle" firstAttribute="leading" secondItem="hOu-aR-oDz" secondAttribute="trailing" constant="8" id="TlL-fX-Cqe"/>
@@ -132,6 +134,7 @@
                             <constraint firstItem="hOu-aR-oDz" firstAttribute="leading" secondItem="WyY-MH-zYq" secondAttribute="leading" constant="12" id="pdN-sc-c1C"/>
                             <constraint firstItem="VlZ-lk-H2U" firstAttribute="top" secondItem="UOA-5S-Tle" secondAttribute="bottom" id="sRl-y1-nAm"/>
                             <constraint firstItem="PhR-ut-pUA" firstAttribute="leading" secondItem="Ok7-m0-f0b" secondAttribute="trailing" constant="-2" id="t3n-fr-7tT"/>
+                            <constraint firstItem="ich-jW-aaw" firstAttribute="top" secondItem="Ok7-m0-f0b" secondAttribute="bottom" constant="2" id="wqy-Xd-2K1"/>
                             <constraint firstItem="CBF-Yj-Z6S" firstAttribute="top" secondItem="WyY-MH-zYq" secondAttribute="top" constant="12" id="xBP-dI-5gg"/>
                             <constraint firstItem="Ok7-m0-f0b" firstAttribute="top" secondItem="5Rd-cZ-ueR" secondAttribute="bottom" constant="12" id="yur-kK-Zeb"/>
                             <constraint firstAttribute="trailing" secondItem="CBF-Yj-Z6S" secondAttribute="trailing" constant="12" id="z1U-t0-IOf"/>
@@ -149,6 +152,7 @@
             <size key="customSize" width="376" height="292"/>
             <connections>
                 <outlet property="imvAvatar" destination="hOu-aR-oDz" id="uSC-vh-mFd"/>
+                <outlet property="lblCaption" destination="5Rd-cZ-ueR" id="s8P-qR-QNv"/>
                 <outlet property="vwContainer" destination="WyY-MH-zYq" id="dl2-7Z-b6X"/>
             </connections>
             <point key="canvasLocation" x="128.98550724637681" y="213.61607142857142"/>

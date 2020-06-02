@@ -11,6 +11,7 @@ import UIKit
 class NewsfeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var vwContainer: UIView!
     @IBOutlet weak var imvAvatar: UIImageView!
+    @IBOutlet weak var lblCaption: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,4 +25,14 @@ class NewsfeedCollectionViewCell: UICollectionViewCell {
         imvAvatar.downloaded(from: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80")
         self.imvAvatar.makeRounded()
     }
+    
+    func getLabelCaptionHeight() -> CGFloat {
+        print(vwContainer.frame.height)
+        return vwContainer.frame.height
+    }
+//    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+//        print(layoutAttributes.frame.height)
+//        return layoutAttributes
+//    }
+    
 }
